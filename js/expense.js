@@ -470,8 +470,6 @@ window.onload = async function() {
             ".participant-option"
         );
 
-        updateParticipantButtonLabel(participantButton, participantCheckboxes);
-
         const selectedParticipants = Array.isArray(lineItem.participants)
             ? lineItem.participants
             : [];
@@ -484,6 +482,7 @@ window.onload = async function() {
                 saveActiveReceiptChanges();
             });
         });
+        updateParticipantButtonLabel(participantButton, participantCheckboxes);
 
         expenseLineItem.querySelectorAll(".line-item-name, .line-item-price")
             .forEach(input => input.addEventListener("change", saveActiveReceiptChanges));
