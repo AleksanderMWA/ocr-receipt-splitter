@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OCR Receipt Splitter</title>
+        <link rel="icon" type="image/png" href="/assets/icon.png">
+        
+        <link rel="stylesheet" href="/css/styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="/js/db.js" defer></script>
+        <script src="/js/main.js" defer></script>
+    </head>
+
+    <body>
+
+        <div class="main-container">
+            <div class="expense-card-container" id="expenseCardContainer">
+            </div>
+            
+
+            
+
+            <div class="action-bar">     
+
+                <div class="action-bar-btn" data-bs-toggle="modal" data-bs-target="#createExpenseModal">
+                    <img src="/assets/index/createExpenseModal.svg" alt="Create expense">
+                </div>          
+                               
+            </div>
+
+
+            <div class="modal fade"
+                id="createExpenseModal"
+                tabindex="-1" 
+                aria-labelledby="createExpenseModalTitle"
+                aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content custom-modal">
+
+                        <div class="modal-header border-0 pb-0">
+                            <div>
+                                <h2 class="modal-title fs-3 fw-bold" id="createExpenseModalTitle">
+                                    Create new expense
+                                </h2>
+                            </div>
+
+                            <button type="button" class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close">
+                            </button>
+                        </div>
+
+                        
+                        <div class="modal-body pt-4">
+                            <form id="expenseCreationForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="expenseName" class="form-label">Expense name</label>
+                                    <input type="text" id="expenseName" name="expenseName"
+                                        class="form-control custom-input"
+                                        placeholder="Enter expense name" required>
+                                        <div class="invalid-feedback">
+                                            Please enter an expense name.
+                                        </div>
+                                </div>                            
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Expense participants</label>
+
+                                    <div id="expenseParticipants">
+                                        <div class="participant-field">
+                                            <input
+                                                type="text"
+                                                name="expenseParticipants"
+                                                class="form-control custom-input mb-2"
+                                                placeholder="Enter participant name"
+                                                required>
+                                            <div class="invalid-feedback">
+                                                Please enter a participant name.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        id="expenseAddParticipantButton"
+                                        class="btn btn-outline-dark btn-sm mt-2">
+                                        + Add participant
+                                    </button>
+                                </div>
+
+                                <button type="submit"
+                                        class="btn btn-dark w-100 py-2 rounded-3" id="expenseCreateButton">
+                                    Create expense
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>       
+        
+            </div>
+        
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

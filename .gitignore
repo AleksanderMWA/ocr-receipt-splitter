@@ -1,0 +1,8 @@
+/.vscode
+/api/proxy/.vscode
+/api/proxy/obj
+/api/proxy/bin
+/api/proxy/appsettings.json
+/api/proxy/appsettings.Development.json
+/api/proxy/Properties
+/api/examples
